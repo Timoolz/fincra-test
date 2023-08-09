@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "name": "Olamide",
+      "email": "laleyeola@grr.la",
+      "userType": "ADMIN",
+      "password": "password"
+    }
+  ]
+}
