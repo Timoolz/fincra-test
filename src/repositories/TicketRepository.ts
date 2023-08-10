@@ -13,6 +13,22 @@ export const ticketRepository = {
     return await Ticket.find({userId});
   },
 
+
+  async getAllTickets() : Promise<ITicket[]>{
+    return await Ticket.find();
+  },
+
+  async getRecentlyClosedTickets() : Promise<ITicket[]>{
+    return await Ticket.find({
+      status: TicketStatus.COMPLETED ,
+      completedDate: { 
+        $lte: new Date(),
+        $gte: new Date(new Date().setDate(new Date().getDate()-30)),
+
+      }
+    });
+  },
+
   async findById(id: string) : Promise<ITicket| null>{
     return  await Ticket.findOne({_id: id});
   },

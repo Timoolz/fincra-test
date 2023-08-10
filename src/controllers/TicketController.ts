@@ -10,6 +10,7 @@ import CommentRequest from '../interfaces/ICommentRequest';
 import { IAuthRequest } from '../interfaces/IRequest';
 import { UserType } from '../interfaces/UserType';
 import { StatusResponse } from '../interfaces/IResponse';
+import { TicketStatus } from '../interfaces/TicketStatus';
 
 
 
@@ -95,6 +96,26 @@ export const TicketController = {
 
     
       const ticketResponse: StatusResponse = await ticketService.closeTicket(userId, ticketId);
+      return response.status(200).json(ticketResponse);
+    } catch (error) {
+      return HandleErrorResponse(error, response);
+    }
+  },
+
+  async getAllTickets(request: IAuthRequest, response: Response) {
+    try {
+    
+      const ticketResponse: ITicket[] = await ticketService.getAllTickets();
+      return response.status(200).json(ticketResponse);
+    } catch (error) {
+      return HandleErrorResponse(error, response);
+    }
+  },
+
+  async getRecentlyClosedTickets(request: IAuthRequest, response: Response) {
+    try {
+    
+      const ticketResponse: ITicket[] = await ticketService.getRecentlyClosedTickets();
       return response.status(200).json(ticketResponse);
     } catch (error) {
       return HandleErrorResponse(error, response);

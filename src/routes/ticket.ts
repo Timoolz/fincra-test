@@ -23,6 +23,19 @@ router.get(
   TicketController.getUserTickets
 );
 
+router.get(
+  '/all/',
+  Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
+  TicketController.getAllTickets
+);
+  
+  
+router.get(
+  '/recently-closed/',
+  Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
+  TicketController.getRecentlyClosedTickets
+);
+
 router.post(
   '/comment',
   Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
@@ -31,7 +44,7 @@ router.post(
 );
 
 router.get(
-  '/:ticketId',
+  '/id/:ticketId',
   Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
   TicketController.getTicket
 );
@@ -47,6 +60,8 @@ router.post(
   Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
   TicketController.closeTicket
 );
+
+
 
 
 

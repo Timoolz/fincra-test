@@ -51,6 +51,21 @@ export const ticketService = {
             
   },
 
+  async getAllTickets(): Promise<ITicket[]>{
+    const tickets = await ticketRepository.getAllTickets();
+
+    return Promise.resolve(tickets);
+            
+  },
+
+  async getRecentlyClosedTickets(): Promise<ITicket[]>{
+    const tickets = await ticketRepository.getRecentlyClosedTickets();
+
+    return Promise.resolve(tickets);
+            
+  },
+
+  
 
   async getTicket(ticketId: string): Promise<ITicket>{
 
@@ -75,7 +90,7 @@ export const ticketService = {
       throw new BadRequest({message: 'Cannot process ticket with this status'});
     }
 
-    
+
     await ticketRepository.processTicket( userId, ticket);
     return Promise.resolve({successful: true, message: 'Processing ticket'});
 
