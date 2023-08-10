@@ -8,6 +8,7 @@ import { ticketService } from '../services';
 import { HandleErrorResponse } from '../utils/errors/ErrorHandlers';
 import CommentRequest from '../interfaces/ICommentRequest';
 import { IAuthRequest } from '../interfaces/IRequest';
+import { UserType } from '../interfaces/UserType';
 
 
 
@@ -33,9 +34,11 @@ export const TicketController = {
     
       const requestBody = request.body as unknown as CommentRequest;
       const userId = request.pricipal.id as unknown as string;
+      const userType = request.pricipal.role as unknown as UserType;
+
 
     
-      const ticketResponse: ITicket = await ticketService.comment(userId, requestBody);
+      const ticketResponse: ITicket = await ticketService.comment(userId, requestBody, userType);
       return response.status(200).json(ticketResponse);
     } catch (error) {
       return HandleErrorResponse(error, response);
