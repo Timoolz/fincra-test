@@ -7,7 +7,6 @@ export const userService = {
 
 
   async createUser(user: IUser): Promise<IUser>{
-
     const createdUser = await userRepository.createUser(user);
     return Promise.resolve(createdUser);
         
@@ -15,9 +14,8 @@ export const userService = {
 
   async findUserByEmail(email: string): Promise<IUser | null>{
     
-    const createdUser = await userRepository.findByEmail(email);
-
-    return Promise.resolve(createdUser);
+    const user = await userRepository.findByEmail(email);
+    return Promise.resolve(user);
         
   },
 

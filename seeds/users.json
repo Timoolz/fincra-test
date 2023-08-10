@@ -2,8 +2,26 @@
   "users": [
     {
       "name": "Olamide",
-      "email": "laleyeola@grr.la",
+      "email": "admin@fincra.com",
       "userType": "ADMIN",
+      "password": "password"
+    },
+    {
+      "name": "Agent1",
+      "email": "agent1@fincra.com",
+      "userType": "AGENT",
+      "password": "password"
+    },
+    {
+      "name": "Agent2",
+      "email": "agent2@fincra.com",
+      "userType": "AGENT",
+      "password": "password"
+    },
+    {
+      "name": "Agent3",
+      "email": "agent3@fincra.com",
+      "userType": "AGENT",
       "password": "password"
     }
   ]

@@ -10,7 +10,6 @@ import jwt from 'jsonwebtoken';
 
 import {EnvConfig} from '../config';
 import { UserType } from '../interfaces/UserType';
-import e from 'express';
 
 
 
