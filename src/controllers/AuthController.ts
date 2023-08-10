@@ -2,7 +2,7 @@ import { Response, Request } from 'express';
 import { authService } from '../services';
 import { HandleErrorResponse } from '../utils/errors/ErrorHandlers';
 import { IUser } from '../entities';
-import AuthResponse from '../interfaces/IAuthResponse';
+import {AuthResponse} from '../interfaces/IResponse';
 
 export const AuthController = {
 

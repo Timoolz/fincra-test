@@ -1,4 +1,5 @@
 import { Ticket , ITicket} from '../entities/Ticket';
+import { TicketStatus } from '../interfaces/TicketStatus';
 
 export const ticketRepository = {
 
@@ -27,7 +28,32 @@ export const ticketRepository = {
         }
       },
     });
+  },
+
+
+  async processTicket( userId: string, ticket: ITicket) : Promise<ITicket| null>{
+
+    return await Ticket.findByIdAndUpdate(ticket._id, {
+      $set: {
+        startedDate: new Date(),
+        status: TicketStatus.PROCESSING,
+        agentId: userId
+      }
+    });
+  },
+
+
+  async closeTicket( userId: string, ticket: ITicket) : Promise<ITicket| null>{
+
+    return await Ticket.findByIdAndUpdate(ticket._id, {
+      $set: {
+        completedDate: new Date(),
+        status: TicketStatus.COMPLETED
+      }
+    });
   }
+
+
 
 
 };

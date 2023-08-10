@@ -9,6 +9,7 @@ import { HandleErrorResponse } from '../utils/errors/ErrorHandlers';
 import CommentRequest from '../interfaces/ICommentRequest';
 import { IAuthRequest } from '../interfaces/IRequest';
 import { UserType } from '../interfaces/UserType';
+import { StatusResponse } from '../interfaces/IResponse';
 
 
 
@@ -52,6 +53,48 @@ export const TicketController = {
 
     
       const ticketResponse: ITicket[] = await ticketService.getUserTickets(userId);
+      return response.status(200).json(ticketResponse);
+    } catch (error) {
+      return HandleErrorResponse(error, response);
+    }
+  },
+
+  async getTicket(request: IAuthRequest, response: Response) {
+    try {
+
+      const ticketId = request.params.ticketId as string;
+      const ticketResponse: ITicket = await ticketService.getTicket(ticketId);
+      return response.status(200).json(ticketResponse);
+    } catch (error) {
+      return HandleErrorResponse(error, response);
+    }
+  },
+
+
+  async processTicket(request: IAuthRequest, response: Response) {
+    try {
+
+      const userId = request.pricipal.id as unknown as string;
+      const ticketId = request.params.ticketId as string;
+
+    
+      const ticketResponse: StatusResponse = await ticketService.processTicket(userId, ticketId);
+      return response.status(200).json(ticketResponse);
+    } catch (error) {
+      return HandleErrorResponse(error, response);
+    }
+  },
+
+
+  async closeTicket(request: IAuthRequest, response: Response) {
+    try {
+
+      const userId = request.pricipal.id as unknown as string;
+      const ticketId = request.params.ticketId as string;
+
+
+    
+      const ticketResponse: StatusResponse = await ticketService.closeTicket(userId, ticketId);
       return response.status(200).json(ticketResponse);
     } catch (error) {
       return HandleErrorResponse(error, response);

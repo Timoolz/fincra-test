@@ -52,7 +52,6 @@ class TokenSecurity {
         res.status(401).json(transformResponse?.(403, 'User does not have permission'));
         return;
       }
-
       next();
 
 

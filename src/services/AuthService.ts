@@ -1,5 +1,5 @@
 import { IUser } from '../entities';
-import AuthResponse from '../interfaces/IAuthResponse';
+import { AuthResponse } from '../interfaces/IResponse';
 import { UnauthorizedAccess, BadRequest } from '../utils/errors/ErrorHandlers';
 
 import { userService } from './UserService';

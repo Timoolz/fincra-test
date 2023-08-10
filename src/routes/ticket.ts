@@ -30,6 +30,25 @@ router.post(
   TicketController.comment
 );
 
+router.get(
+  '/:ticketId',
+  Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
+  TicketController.getTicket
+);
+  
+router.post(
+  '/process/:ticketId',
+  Security.isAuthUser([ UserType.AGENT]),
+  TicketController.processTicket
+);
+
+router.post(
+  '/close/:ticketId',
+  Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
+  TicketController.closeTicket
+);
+
+
 
 
 export default router;
