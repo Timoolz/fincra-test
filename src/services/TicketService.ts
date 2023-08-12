@@ -1,7 +1,6 @@
-import { ITicket, Ticket } from '../entities/Ticket';
+import { ITicket } from '../entities/Ticket';
 import CommentRequest from '../interfaces/ICommentRequest';
 import TicketRequest from '../interfaces/ITicketRequest';
-import { Logger } from '../utils/Logger';
 import { ticketRepository } from '../repositories/TicketRepository';
 import { TicketStatus } from '../interfaces/TicketStatus';
 import { BadRequest, ResourceNotFoundError } from '../utils/errors/ErrorHandlers';

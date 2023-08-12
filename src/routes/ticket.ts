@@ -23,6 +23,31 @@ router.get(
   TicketController.getUserTickets
 );
 
+router.post(
+  '/comment',
+  Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
+  Validator.validate(commentValidator),
+  TicketController.comment
+);
+
+router.get(
+  '/id/:ticketId',
+  Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
+  TicketController.getTicket
+);
+
+router.post(
+  '/process/:ticketId',
+  Security.isAuthUser([ UserType.AGENT]),
+  TicketController.processTicket
+);
+
+router.post(
+  '/close/:ticketId',
+  Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
+  TicketController.closeTicket
+);
+
 router.get(
   '/all/',
   Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
@@ -36,30 +61,7 @@ router.get(
   TicketController.getRecentlyClosedTickets
 );
 
-router.post(
-  '/comment',
-  Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
-  Validator.validate(commentValidator),
-  TicketController.comment
-);
-
-router.get(
-  '/id/:ticketId',
-  Security.isAuthUser([UserType.USER, UserType.ADMIN, UserType.AGENT]),
-  TicketController.getTicket
-);
   
-router.post(
-  '/process/:ticketId',
-  Security.isAuthUser([ UserType.AGENT]),
-  TicketController.processTicket
-);
-
-router.post(
-  '/close/:ticketId',
-  Security.isAuthUser([UserType.ADMIN, UserType.AGENT]),
-  TicketController.closeTicket
-);
 
 
 
