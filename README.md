@@ -525,4 +525,19 @@ It requires an access token with a role with the following user types.
       }
     ]
 
+### Status Codes
+
+Fincra support returns the following status codes in its API:
+
+| Status Code | Description             |
+|:------------|:------------------------|
+| 200         | `OK`                    |
+| 201         | `CREATED`               |
+| 400         | `BAD REQUEST`           |
+| 401         | `UNAUTHORIZED`          |
+| 403         | `FORBIDDEN`             |
+| 404         | `NOT FOUND`             |
+| 409         | `CONFLICT`              |
+| 500         | `INTERNAL SERVER ERROR` |
+
 
