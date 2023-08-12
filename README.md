@@ -173,7 +173,7 @@ The REST API to fincra support is described below.
 ### Create Ticket
 
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - USER
 #### Request
 
@@ -213,7 +213,7 @@ It requires an endpoint with a role with the following user types.
 
 ### Get All User Tickets
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - USER
 
 #### Request
@@ -262,7 +262,7 @@ It requires an endpoint with a role with the following user types.
 ### Comment on a ticket
 
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - USER
 - ADMIN
 - AGENT
@@ -309,7 +309,7 @@ It requires an endpoint with a role with the following user types.
 
 ### Get a Ticket by id
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - USER
 - ADMIN
 - AGENT
@@ -366,7 +366,7 @@ It requires an endpoint with a role with the following user types.
 
 ### Process a ticket
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 
 - AGENT
 #### Request
@@ -391,7 +391,7 @@ It requires an endpoint with a role with the following user types.
 
 ### Close a ticket
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - ADMIN
 - AGENT
 #### Request
@@ -418,7 +418,7 @@ It requires an endpoint with a role with the following user types.
 
 ### Get All Tickets
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - ADMIN
 - AGENT
 #### Request
@@ -476,7 +476,7 @@ It requires an endpoint with a role with the following user types.
 
 ### Get Recently closed Tickets
 This endpoint is an authenticated endpoint. \
-It requires an endpoint with a role with the following user types.
+It requires an access token with a role with the following user types.
 - ADMIN
 - AGENT
 #### Request
