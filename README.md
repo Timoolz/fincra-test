@@ -83,6 +83,36 @@ Run the following commands
 
     $ yarn test
 
+
+
+
+## Project Structure
+
+```
+fincra-test
+    |--seeds\               # Seed Data
+    |--src\
+        |--bin  
+            |--www
+                |--index.ts             # App entry point
+        |--config\              # App config
+        |--controllers\         # Route controllers (controller layer)
+        |--entities\            # Mongo Entities
+        |--interfaces\          # App Interfaces (types)
+        |--middlewares\         # Custom express middlewares
+        |--repositories\        # Repositories( data layer)
+        |--routes\              # routes
+        |--seed-config\         # seed init and config
+        |--services\            # service layer
+        |--utils\               # utils
+        |--validators\          # validators
+        |--app.ts               # Express app
+    |--test\                # testDirectory
+```
+
+
+
+
 ## REST API DOCUMENTATION
 
 Once the application is up and running, you can call the endpoints.
