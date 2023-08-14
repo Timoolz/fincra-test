@@ -585,3 +585,12 @@ Fincra support returns the following status codes in its API:
 | 500         | `INTERNAL SERVER ERROR` |
 
 
+
+## IMPROVEMENTS
+
+The following are list of possible improvements;
+
+- JWT token generated should have an expiry date that renders it invalid 
+
+- Pagination should be implemented on the get multiple ticket calls
+
