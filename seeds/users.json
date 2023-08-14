@@ -23,6 +23,12 @@
       "email": "agent3@fincra.com",
       "userType": "AGENT",
       "password": "password"
+    },
+    {
+      "name": "User",
+      "email": "user@fincra.com",
+      "userType": "USER",
+      "password": "password"
     }
   ]
 }

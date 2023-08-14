@@ -112,6 +112,20 @@ fincra-test
 
 
 
+## TEST CREDENTIALS
+
+The following credentials can be used to test;
+
+- ADMIN
+    `email: 'admin@fincra.com'; password: 'password'`
+
+- AGENT
+  `email: 'agent1@fincra.com'; password: 'password'`
+
+- USER
+  `email: 'user@fincra.com'; password: 'password'`
+
+
 
 ## REST API DOCUMENTATION
 
