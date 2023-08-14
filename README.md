@@ -114,7 +114,7 @@ fincra-test
 
 ## TEST CREDENTIALS
 
-The following credentials can be used to test;
+The following credentials can be used to test. These credentials are from seeded data;
 
 - ADMIN
     `email: 'admin@fincra.com'; password: 'password'`
